@@ -20,7 +20,15 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    
+    let choice = prompt("Rock, paper or scissors? ");
+
+    while(choice != "rock" && choice != "paper" && choice != "scissors"
+            && choice != "r" && choice != "p" && choice != "s") {
+        choice = prompt("Please input rock, paper or scissors: ");
+    }
+
+    return choice;
 }
 
 console.log(getComputerChoice());
+console.log(getHumanChoice());
