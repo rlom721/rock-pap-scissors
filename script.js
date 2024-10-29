@@ -34,8 +34,6 @@ function getHumanChoice() {
 // console.log(getComputerChoice());
 // console.log(getHumanChoice());
 
-// Main gameplay code below
-
 let humanScore = 0,
     computerScore = 0;
 
@@ -63,7 +61,25 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+// Main gameplay loop for five rounds
+function playGame() {
+    let count = 0;
+    
+    while (count < 5) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+        playRound(humanSelection, computerSelection);
+        count++;
+    }
+
+    if (humanScore > computerScore) {
+        console.log("Congratulations, you've won!");
+    } else {
+        console.log("Sorry, you've lost! Better luck next time.");
+    }
+
+    return 0;
+}
+
+playGame();
